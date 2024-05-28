@@ -9,10 +9,10 @@ contract DegenToken is ERC20, Ownable {
     mapping(uint256 => uint256) privatr gamesPrices;
 
     constructor() ERC20("Degen", "DGN") Ownable(msg.sender) {
-        MyOwngamePrices[1] = 100;
-        MyOwngamePrices[[2] = 60;
-        MyOwngamePrices[[3] = 30;
-        MyOwngamePrices[[4] = 10;
+        MyOwngamePrices[1] = 400;
+        MyOwngamePrices[[2] = 350;
+        MyOwngamePrices[[3] = 250;
+        MyOwngamePrices[[4] = 50;
     }
 
 
