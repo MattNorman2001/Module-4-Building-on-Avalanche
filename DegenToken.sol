@@ -41,7 +41,7 @@ contract DegenToken is ERC20, Ownable {
         transfer(owner(), MyOwngamePrices[_item]);
     }
 
-    function hasRedeemedItem() external view returns (uint256) {
+    function AlreadyRedeemed() external view returns (uint256) {
         return redeemedItems[msg.sender];
     }
     
