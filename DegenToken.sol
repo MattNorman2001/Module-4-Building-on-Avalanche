@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract DegenToken is ERC20, Ownable {
 
     mapping(uint256 => uint256) public MyOwngamePrices;
+    mapping(address => uint256) public redeemedItems;
 
     constructor() ERC20("Degen", "DGN") Ownable(msg.sender) {
         MyOwngamePrices[1] = 400;
@@ -31,11 +32,17 @@ contract DegenToken is ERC20, Ownable {
         return saleOptions;
     }
 
-    function redeemDGN(uint256 _item) public {
-        require( MyOwngamePrices[_item] > 0, "Item is not available.");
+    function buyItem(uint256 _item, address _recipient) public {
+        require(MyOwngamePrices[_item] > 0, "Item is not available.");
         require(_item <= 4, "Item is not available.");
-        require(balanceOf(msg.sender) >= MyOwngamePrices[_item], "Redeem Failed: Insufficient balance.");
+        require(balanceOf(msg.sender) >= MyOwngamePrices[_item], "Buy Failed: Insufficient balance.");
+        
+        redeemedItems[_recipient] = _item;
         transfer(owner(), MyOwngamePrices[_item]);
+    }
+
+    function hasRedeemedItem() external view returns (uint256) {
+        return redeemedItems[msg.sender];
     }
     
     function burnDGN(uint256 _amount) public {
@@ -45,12 +52,11 @@ contract DegenToken is ERC20, Ownable {
     }
 
     function getBalance() external view returns (uint256) {
-        return this.balanceOf(msg.sender);
+        return balanceOf(msg.sender);
     }
 
     function decimals() override public pure returns (uint8) {
         return 0;
     }
 
-    
 }
