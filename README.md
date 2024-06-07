@@ -32,9 +32,9 @@ contract DegenToken is ERC20, Ownable {
     }
 
 Once the Code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "DegenToken" and you will see the deploy and click it once done scroll down you can see it in the contract list once you see it click there first is go to mint copy the address then paste it lets say 10000 next is burn the burn value is 1000 it work then go to total supply as you can see its 9000 and we go to the buy item to buy i will buy item 2 then the recipient paste it and click it works then go to my onwgames to check the item cost as you can see its 350 then redeem items paste the id as you can see it redeem then redeem item paste the id as you it works go to transfer once done tranferfrom and allowance paste the id and transac lastly transferownership paste the id of the mew ownership as you can see it works that's all thank you for watching
+
 ## Authors
 Matt Norman A Guerra:8212366@ntc.edu.ph
 
 ## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
+MIT 
